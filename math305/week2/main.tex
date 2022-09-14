@@ -1,6 +1,7 @@
 \documentclass{article}
 \usepackage{amsmath}
 \usepackage{amsfonts}
+\usepackage{pifont}
 
 \begin{document}
 
@@ -18,7 +19,7 @@ Define operations of addition and multiplication on $\mathbb{Z}_5 = \{0,1,2,3,4\
     \hline
     2 & 2 & 3 & 4 & 0 & 1 & 2 & 0 & 2 & 4 & 1 & 3 \\
     \hline
-    3 & 3 & 4 & 0 & 1 & 2 & 3 & 0 & 3 & 4 & 1 & 2 \\
+    3 & 3 & 4 & 0 & 1 & 2 & 3 & 0 & 3 & 1 & 4 & 2 \\
     \hline
     4 & 4 & 0 & 1 & 2 & 3 & 4 & 0 & 4 & 3 & 2 & 1 \\
     \hline
@@ -34,11 +35,28 @@ For any $a, b\in\mathbb{Z}_5$ there is a number $a+b\in\mathbb{Z}_5$ and $a + b 
 
 \begin{itemize}
     \item $a+b\in\mathbb{Z}_5$ can be determined by the given definition of addition.  No element of $\mathbb{Z}_5$ is $>4$, so the operation of addition is closed.
+    \item This follows directly from examining the addition table.
+\end{itemize}
+
+$a + b = b + a$ can be validated by examining the table and enumerating the combinations of rows and columns.  I have provided an example for $0$ below.  The remaining integers follow the same pattern.
+\begin{itemize}
+	\item $0+0=0$
+	\item $0+1=1+0=1$
+	\item $0+2=2+0=2$
+	\item $0+3=3+0=3$
+	\item $0+4=4+0=4$
+	\item $1+1=1$
+	\item $1+2=2+1=3$
+	\item ...
 \end{itemize}
 
 \subsection{A2}
 
 For any $a, b, c\in\mathbb{Z}_5$ the indentity $(a+b)+c=a+(b+c)$ is true.
+
+\begin{itemize}
+    \item Since addition in $\mathbb{Z}_5$ is closed, every sum $a+b$ and $b+c$ falls inside the set.  This can be verified computationally in the case of $\mathbb{Z}_5$, but a more useful proof would require better definitions of modular arithmetic and a succcessor function.
+\end{itemize}
 
 \subsection{A3}
 
@@ -47,41 +65,78 @@ There is a unique number $0\in\mathbb{Z}_5$ so that, for all $a\in\mathbb{Z}_5$,
 \begin{itemize}
     \item This follows directly from examining the addition table.
     \begin{itemize}
-        \item $0+0=0$
-        \item $0+1=1+0=1$
-        \item $0+2=2+0=2$
-        \item $0+3=3+0=3$
-        \item $0+4=4+0=4$
+        \item[\ding{217}] $0+0=0$
+        \item[\ding{217}] $0+1=1+0=1$
+        \item[\ding{217}] $0+2=2+0=2$
+        \item[\ding{217}] $0+3=3+0=3$
+        \item[\ding{217}] $0+4=4+0=4$
     \end{itemize}
 \end{itemize}
 
 
 \subsection{A4}
 
-For any number $a\in\mathbb{Z}_5$ there is a corresponding number deonted by $-a$ with the property that $a+(-a)=0$.
+For any number $a\in\mathbb{Z}_5$ there is a corresponding number denoted by $-a$ with the property that $a+(-a)=0$.
+
+\begin{itemize}
+	\item $0+(-0)=0$
+	\item $1+(-1)=0$
+	\item $2+(-2)=0$
+	\item $3+(-3)=0$
+	\item $4+(-4)=0$
+\end{itemize}
 
 \subsection{M1}
 
 For any $a, b\in\mathbb{Z}_5$ there is a number $ab\in\mathbb{Z}_5$ and $ab=ba$.
 
 \begin{itemize}
-    \item $a+b\in\mathbb{Z}_5$ can be determined by the given definition of multiplication.  No element of $\mathbb{Z}_5$ is $>4$, so the operation of multiplication is closed.
+    \item $a*b\in\mathbb{Z}_5$ can be determined by the given definition of multiplication.  No element of $\mathbb{Z}_5$ is $>4$, so the operation of multiplication is closed.  Similar to the case for addition, this can be validated computationally (with a computer).
 \end{itemize}
 
 \subsection{M2}
 
 For any $a, b, c\in\mathbb{Z}_5$ the identity $(ab)c=a(bc)$ is true.
 
+\begin{itemize}
+	\item The case of any $a, b, c$ equal to one is covered by M3 and M4.  Any $a, b, c$ equal to zero results in 0.  The remaining cases can be validated computationally.
+\end{itemize}
+
 \subsection{M3}
 
 There is a unique number $1\in\mathbb{Z}_5$ so that $a1=1a=a$ for all $a\in\mathbb{Z}_5$.
+
+\begin{itemize}
+    \item This follows directly from examining the multiplication table.
+    \begin{itemize}
+        \item[\ding{217}] $1*1=1$
+        \item[\ding{217}] $1*1=1*1=1$
+        \item[\ding{217}] $1*2=2*1=2$
+        \item[\ding{217}] $1*3=3*1=3$
+        \item[\ding{217}] $1*4=4*1=4$
+    \end{itemize}
+\end{itemize}
 
 \subsection{M4}
 
 For any number $a\in\mathbb{Z}_5, a\neq0$, there is a corresponding number denoted $a^{-1}$ with the property that $aa^{-1}=1$.
 
+\begin{itemize}
+    \item This follows directly from examining the multiplication table.
+    \begin{itemize}
+        \item[\ding{217}] $1*1=1$
+        \item[\ding{217}] $2*3=1$
+        \item[\ding{217}] $3*2=1$
+        \item[\ding{217}] $4*4=1$
+    \end{itemize}
+\end{itemize}
+
 \subsection{AM1}
 
 For any $a, b, c \in\mathbb{Z}_5$ the identity $(a+b)c=ac +bc$ is true.
+
+\begin{itemize}
+	\item The case of $c=0$ is trivially 0. $c=1$ is covered by M3.  The remaining cases can be validated computationally.
+\end{itemize}
 
 \end{document}
