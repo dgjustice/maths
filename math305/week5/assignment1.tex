@@ -1,0 +1,164 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc} % Required for inputting international characters
+\usepackage[T1]{fontenc} % Output font encoding for international characters
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{pifont}
+\usepackage[backend=biber,
+style=apa,
+citestyle=authoryear]{biblatex}
+
+\addbibresource{references.bib}
+
+\usepackage{mathpazo} % Palatino font
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\begin{titlepage} % Suppresses displaying the page number on the title page and the subsequent page counts as page 1
+	\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Defines a new command for horizontal lines, change thickness here
+
+	\center % Centre everything on the page
+
+	%------------------------------------------------
+	%	Headings
+	%------------------------------------------------
+
+	\textsc{\LARGE American Public University}\\[1.5cm] % Main heading such as the name of your university/college
+
+	%------------------------------------------------
+	%	Title
+	%------------------------------------------------
+
+	\HRule\\[0.4cm]
+
+	{\huge\bfseries Assignment 1}\\[0.4cm] % Title of your document
+
+	\HRule\\[1.5cm]
+
+	%------------------------------------------------
+	%	Author(s)
+	%------------------------------------------------
+
+	\begin{minipage}{0.4\textwidth}
+		\begin{flushleft}
+			\large
+			\textit{Author}\\
+			Daniel \textsc{Justice} % Your name
+		\end{flushleft}
+	\end{minipage}
+	~
+	\begin{minipage}{0.4\textwidth}
+		\begin{flushright}
+			\large
+			\textit{Professor}\\
+			Dr. Farshad \textsc{Foroozan} % Supervisor's name
+		\end{flushright}
+	\end{minipage}
+
+	%------------------------------------------------
+	%	Date
+	%------------------------------------------------
+
+	\vfill\vfill\vfill
+	{\large\today} % Date, change the \today to a set date if you want to be precise
+	\vfill
+
+\end{titlepage}
+
+%----------------------------------------------------------------------------------------
+
+\section{}
+
+\#1) Prove the following by using a contrapositive argument.
+\paragraph{}
+Let $q(x) = 6x^2+2$.
+If $q(x_1)\ne q(x_2)$, then $x_1 \ne x_2$.
+\paragraph{}
+The contrapositive of $P \implies Q$ is $\neg Q \implies \neg P$.
+The contrapositive of the previous statement is:
+\begin{equation}
+	x_1=x_2 \implies q(x_1) = q(x_2)
+\end{equation}
+$6x^2+2$ is a relation that maps $\{x, x \in \mathbb{R}\}$ to $\{y:y \ge 2, y \in \mathbb{R}\}.$
+Every $x$ in the domain maps to exactly one $y$ in the codomain, so choosing any arbitrary $x_1 = x_2$ maps to $q(x_1)=q(x_2)$.
+$\square$
+
+\section{}
+
+\#2) Clearly state the converse of the implication given in problem \#1.
+Provide a counter example showing why the converse is false.
+\paragraph{}
+The previous problem can be stated as $P \implies Q$.
+The converse of this statement is $Q \implies P$.
+The converse of problem \#1 is:
+
+\begin{equation}
+	x_1 \ne x_2 \implies q(x_1) \ne q(x_2)
+\end{equation}
+
+This implication is quickly disproven by choosing any pair positive and negative values for a real number $\ne$ 0.
+For example,
+
+\begin{equation}
+	\begin{aligned}
+	2 \ne -2 \implies q(2) \ne q(-2) \\
+	q(2) = 26 \\
+	q(-2) = 26 \\
+	\end{aligned}
+\end{equation}
+
+Since $2 \ne -2$ and $26 = 26$, the converse is clearly false.
+$\square$
+
+\section{}
+
+\#3) Prove the following by using: a contradiction argument; the definition of a logarithm; the definition of rational numbers; and the properties of even and odd numbers.
+\paragraph{}
+The $log_8(27)$ is irrational.
+\paragraph{}
+According to Wolfram, "a logarithm $log_bx$ for a base $b$ and a number $x$ is defined to be the inverse function of taking $b$ to the power of $x$"(\cite{wolfram}).
+This means that we are looking for some number $n$ where $8^n=27$.
+As a contradiction, assume that $n$ is a rational number that can be represented as $\frac{p}{q}$ where $p$ and $q$ are coprime integers.
+We can rewrite this as
+\begin{equation}
+	8^{\frac{p}{q}}=27
+\end{equation}
+This can be rewritten in terms of roots.
+\begin{equation}
+	\sqrt[q]{8^p}=27
+\end{equation}
+\begin{equation}
+	8^p=27^q
+\end{equation}
+It is assumed that $p$ is an integer, so by the property of even numbers, $8^p$ must be even.
+Furthermore, $q$ is also assumed to be an integer which means that $27^p$ is odd due to the property of odd numbers.
+This leads to a contraction, thus $log_8(27)$ must be irrational.
+$\square$
+
+\section{}
+
+\#4) Prove the following by using: a contrapositive argument; the fact that a sum of integers is an integer; the fact that a product of integers is an integer; and the definition of rational numbers.
+\paragraph{}
+If $xy$ is irrational, then $x$ is irrational or $y$ is irrational.
+\paragraph{}
+The contrapositive of $P \implies Q$ is $\neg Q \implies \neg P$.
+The contrapositive of the previous statement is:
+\begin{equation}
+	x \in \mathbb{Q}, y \in \mathbb{Q} \implies xy \in \mathbb{Q}
+\end{equation}
+By the definition of rational numbers, let $x=\frac{p}{q}$ and $y=\frac{m}{n}$ where $p$, $q$, $m$, and $n$ are all integers(\cite{tbb}).
+Rewriting $xy$ in these terms yields
+\begin{equation}
+	xy=\bigg(\frac{p}{q}\bigg)\bigg(\frac{m}{n}\bigg)=\frac{pm}{qn}
+\end{equation}
+The product of two integers is an integer, so $pm$ and $qn$ are both integers.
+The product $xy$ has been rewritten in terms of an integer divided by an integer which is the definition of a rational number.
+$\square$
+
+\printbibliography
+
+\end{document}

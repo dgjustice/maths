@@ -1,0 +1,157 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc} % Required for inputting international characters
+\usepackage[T1]{fontenc} % Output font encoding for international characters
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{pifont}
+\usepackage[backend=biber,
+style=apa,
+citestyle=authoryear]{biblatex}
+
+\addbibresource{references.bib}
+
+\usepackage{mathpazo} % Palatino font
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\begin{titlepage} % Suppresses displaying the page number on the title page and the subsequent page counts as page 1
+	\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Defines a new command for horizontal lines, change thickness here
+
+	\center % Centre everything on the page
+
+	%------------------------------------------------
+	%	Headings
+	%------------------------------------------------
+
+	\textsc{\LARGE American Public University}\\[1.5cm] % Main heading such as the name of your university/college
+
+	%------------------------------------------------
+	%	Title
+	%------------------------------------------------
+
+	\HRule\\[0.4cm]
+
+	{\huge\bfseries Assignment 2}\\[0.4cm] % Title of your document
+
+	\HRule\\[1.5cm]
+
+	%------------------------------------------------
+	%	Author(s)
+	%------------------------------------------------
+
+	\begin{minipage}{0.4\textwidth}
+		\begin{flushleft}
+			\large
+			\textit{Author}\\
+			Daniel \textsc{Justice} % Your name
+		\end{flushleft}
+	\end{minipage}
+	~
+	\begin{minipage}{0.4\textwidth}
+		\begin{flushright}
+			\large
+			\textit{Professor}\\
+			Dr. Farshad \textsc{Foroozan} % Supervisor's name
+		\end{flushright}
+	\end{minipage}
+
+	%------------------------------------------------
+	%	Date
+	%------------------------------------------------
+
+	\vfill\vfill\vfill
+	{\large\today} % Date, change the \today to a set date if you want to be precise
+	\vfill
+
+\end{titlepage}
+
+%----------------------------------------------------------------------------------------
+
+\section{}
+
+\#1) Prove the following by using: a direct argument and definition 2.6.
+\begin{equation}
+	\lim_{n \rightarrow \infty} \bigg(\frac{3n^2}{2n^2-3n}\bigg)=\frac{3}{2}\text{ for }n \in \mathbb{N}
+\end{equation}
+
+Let any positive $\epsilon$ be given.  We need to find a number N so that every term in the sequence on and after the Nth term is closer to 3/2 than $\epsilon$, that is, so that
+\begin{equation}
+	\bigg|\bigg(\frac{3n^2}{2n^2-3n}\bigg) - \frac{3}{2}\bigg| < \epsilon
+\end{equation}
+for n=N, n=N+1, n=N+2, ... (\cite{tbb})
+
+\paragraph{}
+
+\begin{equation}
+	\begin{aligned}
+		\bigg|\bigg(\frac{3n^2}{2n^2-3n}\bigg) - \frac{3(2n^2-3n)}{2(2n^2-3n)}\bigg| < \epsilon \\
+		\bigg|\bigg(\frac{3n^2}{2n^2-3n}\bigg) - \frac{6n^2-9n}{2(2n^2-3n))}\bigg| < \epsilon \\
+		\bigg|\frac{-3n^2+9n}{-2n^2+3n}\bigg| < \epsilon \\
+		\frac{3n^2-9n}{2n^2-3n} > -\epsilon \\
+	\end{aligned}
+\end{equation}
+
+I'm stuck.  I don't know where to go from here.
+
+$\square$
+
+\section{}
+
+\#2) Prove the following by using: a direct argument; exercise 2.4.1; and Theorems 2.14, 2.15, 2.16, and/or 2.17.
+\begin{equation}
+	\lim_{n \rightarrow \infty} \big(\sqrt{n^2+n}-n\big)=\frac{1}{2}\text{ for }n \in \mathbb{N}
+\end{equation}
+
+\begin{equation}
+	\begin{aligned}
+		\lim_{n \rightarrow \infty} n\big(\frac{\sqrt{n^2+n}}{n}-1\big) \\
+		\lim_{n \rightarrow \infty} n\big(\frac{{n^{\frac{1}{2}}(n+1)^{\frac{1}{2}}}}{n}-1\big) \\
+		\lim_{n \rightarrow \infty} n\big(\frac{n^{\frac{3}{2}}}{n}-1\big) \\
+		\lim_{n \rightarrow \infty} n^{\frac{3}{2}} \\
+		\lim_{n \rightarrow \infty} n^{\frac{3}{2}} \\
+	\end{aligned}
+\end{equation}
+
+I'm stuck.  I don't know where to go from here.
+
+$\square$
+
+\section{}
+
+\#3) Prove the following by using: a direct argument; and definition 2.9.
+\begin{equation}
+	\lim_{n \rightarrow \infty} \bigg(\frac{e^{2n}}{e^n+1}\bigg)\text{ diverges for }n \in \mathbb{N}
+\end{equation}
+
+If M is any positive number we need to find some point in the sequence after which all terms exceed M. Thus we need to consider the inequality (\cite{tbb})
+
+\begin{equation}
+	\begin{aligned}
+		\frac{e^{2n}}{e^n+1}\ge M \\
+		\frac{e^2 e^n}{e^n+1}\ge M \\
+	\end{aligned}
+\end{equation}
+
+Since
+
+\begin{equation}
+	\frac{e^{n}}{e^n+1} < 1
+\end{equation}
+
+as long as n $\ge$M+1 this will be true. Thus take any integer N $\ge$ M + 1 and it will be true that
+
+\begin{equation}
+	\frac{e^{2n}}{e^n+1}\ge M
+\end{equation}
+
+for all n $\ge$ N.
+
+$\square$
+
+\printbibliography
+
+\end{document}
