@@ -78,13 +78,26 @@ citestyle=authoryear]{biblatex}
 	\lim_{n \rightarrow \infty} \bigg(\frac{3n^2}{2n^2-3n}\bigg)=\frac{3}{2}\text{ for }n \in \mathbb{N}
 \end{equation}
 
+\paragraph{Value of the limit}
+\begin{equation}
+	\begin{aligned}
+		= \lim_{n \rightarrow \infty} \bigg(\frac{3n^2}{2n^2-3n}\bigg) \\
+		= \lim_{n \rightarrow \infty} \bigg(\frac{3n^2}{2n^2-3n}\bigg) \cdot \frac{\frac{1}{n^2}}{\frac{1}{n^2}} \\
+		= \lim_{n \rightarrow \infty} \bigg(\frac{3}{2-\frac{3}{n}}\bigg) \\
+		= \frac{\displaystyle\lim_{n \rightarrow \infty} 3}{\displaystyle\lim_{n \rightarrow \infty} 2 - \displaystyle\lim_{n \rightarrow \infty} \frac{3}{n}} \\
+		= \frac{\displaystyle\lim_{n \rightarrow \infty} 3}{\displaystyle\lim_{n \rightarrow \infty} 2 - 0} \\
+		= \frac{\displaystyle\lim_{n \rightarrow \infty} 3}{\displaystyle\lim_{n \rightarrow \infty} 2} \\
+		= \frac{3}{2} \\
+	\end{aligned}
+\end{equation}
+
+\paragraph{Proof of the limit}
+
 Let any positive $\epsilon$ be given.  We need to find a number N so that every term in the sequence on and after the Nth term is closer to 3/2 than $\epsilon$, that is, so that
 \begin{equation}
 	\bigg|\bigg(\frac{3n^2}{2n^2-3n}\bigg) - \frac{3}{2}\bigg| < \epsilon
 \end{equation}
 for n=N, n=N+1, n=N+2, ... (\cite{tbb})
-
-\paragraph{}
 
 \begin{equation}
 	\begin{aligned}
@@ -94,8 +107,6 @@ for n=N, n=N+1, n=N+2, ... (\cite{tbb})
 		\frac{3n^2-9n}{2n^2-3n} > -\epsilon \\
 	\end{aligned}
 \end{equation}
-
-I'm stuck.  I don't know where to go from here.
 
 $\square$
 
@@ -108,15 +119,20 @@ $\square$
 
 \begin{equation}
 	\begin{aligned}
-		\lim_{n \rightarrow \infty} n\big(\frac{\sqrt{n^2+n}}{n}-1\big) \\
-		\lim_{n \rightarrow \infty} n\big(\frac{{n^{\frac{1}{2}}(n+1)^{\frac{1}{2}}}}{n}-1\big) \\
-		\lim_{n \rightarrow \infty} n\big(\frac{n^{\frac{3}{2}}}{n}-1\big) \\
-		\lim_{n \rightarrow \infty} n^{\frac{3}{2}} \\
-		\lim_{n \rightarrow \infty} n^{\frac{3}{2}} \\
+		\lim_{n \rightarrow \infty} \big(\sqrt{n^2+n}-n\big) \bigg(\frac{\sqrt{n^2+n}+n}{\sqrt{n^2+n}+n} \bigg) \\
+		\lim_{n \rightarrow \infty} \frac{n}{\sqrt{n^2+n}+n} \\
+		\lim_{n \rightarrow \infty} \frac{n}{\sqrt{n^2+\frac{n^2}{n}}+n} \\
+		\lim_{n \rightarrow \infty} \frac{n}{\sqrt{n^2(1+\frac{1}{n})}+n} \\
+		\lim_{n \rightarrow \infty} \frac{n}{\sqrt{n^2}\sqrt{(1+\frac{1}{n})}+n} \\
+		\lim_{n \rightarrow \infty} \frac{n}{n\sqrt{(1+\frac{1}{n})}+n} \\
+		\frac{\displaystyle\lim_{n \rightarrow \infty}n}{\displaystyle\lim_{n \rightarrow \infty}n\cdot\displaystyle\lim_{n \rightarrow \infty}\sqrt{(1+\frac{1}{n})}+\displaystyle\lim_{n \rightarrow \infty}n} \\
+		\frac{\displaystyle\lim_{n \rightarrow \infty}n}{\displaystyle\lim_{n \rightarrow \infty}n\cdot1+\displaystyle\lim_{n \rightarrow \infty}n} \\
+		\frac{\displaystyle\lim_{n \rightarrow \infty}n}{\displaystyle\lim_{n \rightarrow \infty}n+\displaystyle\lim_{n \rightarrow \infty}n} \\
+		\frac{\displaystyle\lim_{n \rightarrow \infty}n}{\displaystyle\lim_{n \rightarrow \infty}n+\displaystyle\lim_{n \rightarrow \infty}n} \\
+		\frac{\displaystyle\lim_{n \rightarrow \infty}n}{2\cdot\displaystyle\lim_{n \rightarrow \infty}n} \\
+		=\frac{1}{2}
 	\end{aligned}
 \end{equation}
-
-I'm stuck.  I don't know where to go from here.
 
 $\square$
 
