@@ -1,0 +1,39 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+\begin{document}
+
+\section{3.4.24}
+
+Write up a formal proof that the p-harmonic series
+
+\begin{equation}
+	\sum_{k=1}^{\infty} \frac{1}{k^p}
+\end{equation}
+
+converges for p $>$ 1 using the method sketched in the text.
+
+\paragraph{}
+
+By definition, p is greater than one and thus positive.
+1 divided by a positive number is a positive number.
+
+\begin{equation}
+	\forall k > 0, \frac{1}{k^p} > \frac {1}{(k+1)^p}
+\end{equation}
+
+The partial sums of the p-harmonic series are increasing, so the sequence and the series are monotonic.
+Given (from the text pp. 143-144):
+
+\begin{equation}
+	\sum_{k=1}^{2n-1} \frac{1}{k^p} \le \sum_{k=1}^{\infty} \frac{2^{k-1}}{(2^{k-1})^p}
+	= \sum_{j=0}^{\infty} (2^{1-p})^j = \frac{2^{p-1}}{(2^{p-1})-1}
+\end{equation}
+
+This formalizes the grouping of terms demonstrated in section 3.4.2.
+The upper bound is the convergent geometric series.
+Since the partial sums are increasing and bounded above, the p-harmonic series for $p > 1$ must be convergent.
+
+
+\end{document}
