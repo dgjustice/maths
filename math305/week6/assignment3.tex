@@ -35,7 +35,7 @@ citestyle=authoryear]{biblatex}
 
 	\HRule\\[0.4cm]
 
-	{\huge\bfseries Assignment 3}\\[0.4cm] % Title of your document
+	{\huge\bfseries Writing Assignment 3}\\[0.4cm] % Title of your document
 
 	\HRule\\[1.5cm]
 
@@ -105,11 +105,13 @@ Assume $5^{2n}-1$ is true.  By the binomial theorem:
 Then by induction:
 
 \begin{equation}
-	\begin{aligned}
+	\begin{gathered}
 		(8\cdot3+1)^{n+1}-1=\bigg[\sum_{k=0}^{n+1} \binom{n+1}{k}(8\cdot3)^{n+1-k}1^k\bigg] - 1 \\
 		(8\cdot3+1)^{n}\bigg[\sum_{k=0}^{n} \binom{n}{k}(8\cdot3)^{n-k}\bigg] - 1 =\bigg[\sum_{k=0}^{n+1} \binom{n+1}{k}(8\cdot3)^{n+1-k}\bigg] - 1 \\
 		(8\cdot3+1)^{n}\bigg[\sum_{k=0}^{n} \binom{n}{k}(8\cdot3)^{n-k}\bigg] =\bigg[\sum_{k=0}^{n+1} \binom{n+1}{k}(8\cdot3)^{n+1-k}\bigg] \\
-	\end{aligned}
+		(8\cdot3+1)^{n}\bigg[\sum_{k=0}^{n} \binom{n}{k}(8\cdot3)^{n-k}\bigg] =(8\cdot3+1)^{n}\bigg[\sum_{k=0}^{n} \binom{n}{k}(8\cdot3)^{n-k}\bigg] \\
+		(8\cdot3+1)^{n} =(8\cdot3+1)^{n} \\
+	\end{gathered}
 \end{equation}
 
 $\square$
@@ -126,6 +128,41 @@ For all n $\in \mathbb{N}$ with an index i $\in\mathbb{N}$;
 	\sum_{i=1}^{n}i^2=\frac{n(n+1)(2n+1)}{6}
 \end{equation}
 
+Base case:
+\begin{equation}
+	\begin{gathered}
+		\sum_{i=1}^{1}i^2=\frac{1(1+1)(2\cdot1+1)}{6} \\
+		1^2=\frac{(2)(3)}{6} \\
+		1 = \frac{6}{6} \\
+		1 = 1 \\
+	\end{gathered}
+\end{equation}
+
+Assume the following is true:
+
+\begin{equation}
+	1^2+2^2+3^2...+{n}^2=\frac{n(n+1)(2n+1)}{6}
+\end{equation}
+
+We wish to show that
+\begin{equation}
+	1^2+2^2+3^2...+{n}^2+(n+1)^2=\frac{(n(n+1)(2n+1)}{6}
+\end{equation}
+
+also holds true. By induction:
+
+\begin{equation}
+	\begin{gathered}
+		1^2+2^2+3^2+...n^2+(n+1)^2=\frac{(n+1)((n+1)+1)(2(n+1)+1)}{6} \\
+		1^2+2^2+3^2+...n^2+(n+1)^2=\frac{(n+1)(n+2)(2n+3)}{6} \\
+		1^2+2^2+3^2+...n^2+(n+1)^2= \\
+		\frac{(n+1)(n+2)(2n+3)}{6} = \frac{1(1+1)(2\cdot1+1)}{6} + (1+n)^2 \\
+		=\frac{2n^3+9n^2+13n+6}{6} = \frac{2n^3+2n^2+n^2+n}{6} + \frac{6}{6}(n^2+2n+1) \\
+		=\frac{2n^3+9n^2+13n+6}{6} = \frac{2n^3+2n^2+n^2+n}{6} + \frac{6n^2+12n+6)}{6} \\
+		=\frac{2n^3+9n^2+13n+6}{6} = \frac{2n^3+9n^2+13n+6}{6} \\
+	\end{gathered}
+\end{equation}
+
 $\square$
 
 \#3) Prove the following by using: a direct argument; definition 3.6; and Theorem 2.28.
@@ -137,6 +174,22 @@ Prove the following series diverges:
 \begin{equation}
 	\sum_{k=1}^{\infty}\frac{k}{5k+1}
 \end{equation}
+
+Definition 3.6 states that a series converges if the sequence of partial sums converges.
+If the sequence of partial sums does not converge, then the series is divergent (\cite{tbb}).
+
+Theorem 2.28 states if we are given a monotonic sequence ${s_n}$, then it is convergent if and only if ${s_n}$ is bounded (\cite{tbb}).
+
+The sequence $\frac{k}{5k+1}$ is bounded with a limit approaching $\frac{1}{5}$, but the series is divergent.
+
+The smallest term in the sequence of partial sums is $\frac{1}{6}$.
+Choose any N $\ge$ 6M, and:
+
+\begin{equation}
+	\sum_{k=1}^{N}\frac{k}{5k+1} \ge M
+\end{equation}
+
+thereby showing directly that the series diverges.
 
 $\square$
 
