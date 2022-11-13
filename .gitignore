@@ -9,3 +9,4 @@
 *.xml
 *.bbl
 *.docx
+.ipynb_checkpoints
