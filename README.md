@@ -4,6 +4,7 @@
 
 - `jupyter-lab`
 - `sympy`
+- `scipy`
 - `nbconvert[webpdf]`
 
 ## MATH305 Real Analysis
