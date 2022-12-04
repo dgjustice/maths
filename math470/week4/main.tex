@@ -13,9 +13,7 @@ Forward difference formula:
 
 $$f'(x_0)=\frac{f(x_0+h) - f(x_0)}{h} - \frac{h}{2}f''(\xi)$$
 
-Backward difference formula:
-
-$$f'(x_0)=f(x_0) - \frac{f(x_0+h)}{h} - \frac{h}{2}f''(\xi)$$
+Backward difference formula:  same, but $h < 0$
 
 Central difference formula:
 
@@ -59,6 +57,10 @@ $$\int_{x_0}^{x_2} f(x)dx= \frac{h}{3}[f(x_0) + 4f(x_1)+f(x_2)]- \frac{h^5}{90}f
 
 \section*{Remarks}
 
-TBD
+Calculating error bounds for derivatives caught me.
+You need to find $max(f''([a,b]))$.
+
+Richardson extrapolation only works for me if I use the center difference method.
+Forward difference results in poor resolution.
 
 \end{document}
