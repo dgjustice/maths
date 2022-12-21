@@ -9,6 +9,12 @@
 - `matplotlib`
 - `networkx`
 
+### Conversions
+
+```shell
+pandoc week6/assignment4.tex -o ~/Documents/as4.docx
+```
+
 ## MATH305 Real Analysis
 
 [real](math305)

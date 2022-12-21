@@ -1,0 +1,94 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc} % Required for inputting international characters
+\usepackage[T1]{fontenc} % Output font encoding for international characters
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{pifont}
+\usepackage[backend=biber,
+style=apa,
+citestyle=authoryear]{biblatex}
+
+\addbibresource{references.bib}
+
+\usepackage{mathpazo} % Palatino font
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\begin{titlepage} % Suppresses displaying the page number on the title page and the subsequent page counts as page 1
+	\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Defines a new command for horizontal lines, change thickness here
+
+	\center % Centre everything on the page
+
+	%------------------------------------------------
+	%	Headings
+	%------------------------------------------------
+
+	\textsc{\LARGE American Public University}\\[1.5cm] % Main heading such as the name of your university/college
+
+	%------------------------------------------------
+	%	Title
+	%------------------------------------------------
+
+	\HRule\\[0.4cm]
+
+	{\huge\bfseries Writing Assignment MATH412}\\[0.4cm] % Title of your document
+
+	\HRule\\[1.5cm]
+
+	%------------------------------------------------
+	%	Author(s)
+	%------------------------------------------------
+
+	\begin{minipage}{0.4\textwidth}
+		\begin{flushleft}
+			\large
+			\textit{Author}\\
+			Daniel \textsc{Justice} % Your name
+		\end{flushleft}
+	\end{minipage}
+	~
+	\begin{minipage}{0.4\textwidth}
+		\begin{flushright}
+			\large
+			\textit{Professor}\\
+			Dr. Richard \textsc{Han} % Supervisor's name
+		\end{flushright}
+	\end{minipage}
+
+	%------------------------------------------------
+	%	Date
+	%------------------------------------------------
+
+	\vfill\vfill\vfill
+	{\large\today} % Date, change the \today to a set date if you want to be precise
+	\vfill
+
+\end{titlepage}
+
+%----------------------------------------------------------------------------------------
+
+\section*{2.44}
+
+Let $G$ be a simple graph on $2k$ vertices containing no triangles.
+Prove, by induction on $k$, that $G$ has at most $k^2$ edges, and give an example of a graph for which this upper bound is achieved.
+(This result is often called Turán’s extremal theorem.)
+
+$\square$
+
+\section*{2.44}
+
+\subsection*{(i)}
+Prove that, if two distinct cycles of a graph $G$ each contain an edge $e$, then $G$ has a cycle that does not contain $e$.
+
+\subsection*{(ii)}
+Prove a similar result with 'cycles' replaced by 'cutsets'.
+
+$\square$
+
+\printbibliography
+
+\end{document}
