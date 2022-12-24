@@ -9,6 +9,10 @@
 - `matplotlib`
 - `networkx`
 
+### Nicety
+
+- [solarized dark](https://github.com/AllanChain/jupyterlab-theme-solarized-dark)
+
 ### Conversions
 
 ```shell
