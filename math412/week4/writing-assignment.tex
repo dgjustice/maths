@@ -185,7 +185,19 @@ Prove that, if two distinct cutsets of a graph $G$ each contain an edge $e$, the
 \subsection*{Proof}
 
 Two distinct cutsets containing a common edge $e$ have at least two vertices in common.
-The two cutsets must have
+At a minimum:
+$$C_1 = \{\{a, b\}, \{b, c\}\}, C_2 = \{\{a, b\}, \{a, c\}\}$$
+
+The two cutsets must have some other vertex not in common or they would not be distinct sets.
+
+\begin{tikzpicture}[node distance={15mm}, thick, main/.style = {draw, circle}]
+\node[main] (b) {$b$};
+\node[main] (a) [above right of=1] {$a$};
+\node[main] (c) [below right of=a] {$c$};
+\draw[-] (a) -- (b);
+\draw[-] (a) -- (c);
+\draw[-] (b) -- (c);
+\end{tikzpicture}
 
 $\square$
 
