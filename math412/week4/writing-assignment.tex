@@ -4,6 +4,7 @@
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{pifont}
+\usepackage{tikz}
 \usepackage[backend=biber,
 style=apa,
 citestyle=authoryear]{biblatex}
@@ -77,15 +78,114 @@ Let $G$ be a simple graph on $2k$ vertices containing no triangles.
 Prove, by induction on $k$, that $G$ has at most $k^2$ edges, and give an example of a graph for which this upper bound is achieved.
 (This result is often called Turán’s extremal theorem.)
 
+The order of a graph is the number of vertices, and the size is the number of edges (\cite{chart})
+
+\paragraph{Proposition}
+
+If $G$ has no triangles, it has at most $k^2$ edges.
+
+\paragraph{Base case}
+
+$k=1, 2k=2$: By the definition of a simple graph (\cite{wilson}), $G_2$ may not contain any self-loops or multiple edges between vertices.
+In the case of $k=1$ and a graph of $2k$ vertices, only one edge is possible and no triangles are possible.
+There are ${n \choose 2}$ possible combinations of edges for a graph of size $n$.
+A triangle requires 3 distinct vertices, so we must subtract the number of vertices from the set of possible edges so that no subset of 3 edges contains a given vertex more than two times.
+$triangles(G_2) \le {2 \choose 2} - 2 = 0$, as desired.
+
+\paragraph{Inductive Hypothesis}
+
+Let $n \in \mathbb{N}$ and $G_n$ be a graph of size $n$ with no triangles. Assume that
+
+$$size(G_1) \le 1^2, size(G_2) \le 2^2, size(G_3) \le 3^2, \cdots size(G_{n}) \le (n)^2$$
+
+\paragraph{Induction step}
+
+We need to show that
+
+$$size(G_{n+1}) \le (n+1)^2$$
+
+There are ${n \choose 2}$ possible combinations of edges for a graph of size $n$.
+For a graph of size 2, ${2 \choose 2} = 1$.
+For a graph of size 4, ${4 \choose 2} = 6$.
+A triangle requires 3 distinct vertices.
+$size(G_n) = {n \choose 2} - n$
+
+
+\paragraph{Conclusion}
+
 $\square$
 
-\section*{2.44}
+\paragraph{Example}
+
+Given $k=3$, here is a graph of order $2k$ and size $k^2$.
+Adding any other edge would result in a triangle.
+
+\begin{tikzpicture}[node distance={15mm}, thick, main/.style = {draw, circle}]
+\node[main] (a) {$a$};
+\node[main] (b) [above right of=a] {$b$};
+\node[main] (c) [right of=b] {$c$};
+\node[main] (d) [below right of=c] {$d$};
+\node[main] (d) [below right of=c] {$d$};
+\node[main] (f) [below right of=a] {$f$};
+\node[main] (e) [right of=f] {$e$};
+\draw[-] (a) -- (b);
+\draw[-] (b) -- (c);
+\draw[-] (c) -- (d);
+\draw[-] (d) -- (e);
+\draw[-] (e) -- (f);
+\draw[-] (f) -- (a);
+\draw[-] (a) -- (d);
+\draw[-] (b) -- (e);
+\draw[-] (f) -- (c);
+\end{tikzpicture}
+
+\section*{2.45}
 
 \subsection*{(i)}
 Prove that, if two distinct cycles of a graph $G$ each contain an edge $e$, then $G$ has a cycle that does not contain $e$.
 
+\subsection*{Proof}
+
+The smallest cycle possible is a triangle where every vertex has degree 2.
+Combining two triangles on any edge results in a graph of order 4 and size 5 (6 edges - 1 shared edge).
+This graph must contain two edges of degree 3.
+Deleting the shared edge results in a graph of order 4 and size 4 where every vertex has a degree of 2.
+This new graph must contain a cycle because there are no vertices of degree 1.
+
+\begin{tikzpicture}[node distance={15mm}, thick, main/.style = {draw, circle}]
+\node[main] (a) {$a$};
+\node[main] (b) [above right of=a] {$b$};
+\node[main] (c) [below right of=a] {$c$};
+\node[main] (d) [below right of=b] {$d$};
+\draw[-] (a) -- (b);
+\draw[-] (a) -- (c);
+\draw[-] (b) -- (d);
+\draw[-] (c) -- (d);
+\draw[-] (b) -- (c);
+\end{tikzpicture}
+\quad
+\begin{tikzpicture}[node distance={15mm}, thick, main/.style = {draw, circle}]
+\node[main] (a) {$a$};
+\node[main] (b) [above right of=a] {$b$};
+\node[main] (c) [below right of=a] {$c$};
+\node[main] (d) [below right of=b] {$d$};
+\draw[-] (a) -- (b);
+\draw[-] (a) -- (c);
+\draw[-] (b) -- (d);
+\draw[-] (c) -- (d);
+\end{tikzpicture}
+
+$\square$
+
 \subsection*{(ii)}
 Prove a similar result with 'cycles' replaced by 'cutsets'.
+
+Prove that, if two distinct cutsets of a graph $G$ each contain an edge $e$, then $G$ has a cutset that does not contain $e$.
+
+\subsection*{Proof}
+
+Two distinct cutsets containing a common edge $e$ have at least two vertices in common.
+The two cutsets must have
 
 $\square$
 
