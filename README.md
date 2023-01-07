@@ -21,12 +21,16 @@ pandoc week6/assignment4.tex -o ~/Documents/as4.docx
 
 ## MATH305 Real Analysis
 
-[real](math305)
+[real](math305-real-analysis)
 
 ## MATH470 Numerical Analysis
 
-[numeric](math470)
+[numeric](math470-numerical-analysis)
 
 ## MATH412 Graph Theory
 
-[graph](math412)
+[graph](math412-graph-theory)
+
+## MATH460 Applied Maths
+
+[applied](math460-applied-math)
